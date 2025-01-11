@@ -1,6 +1,8 @@
 // IMPORTS :
 import { VERSION } from "./scripts/version.js";
 import { TO_MAP } from "./scripts/load.js";
+import { LOAD } from "./scripts/load.js";
+
 
 // TESTS : 
 function test_TO_MAP() {
@@ -29,10 +31,37 @@ function test_TO_MAP() {
     }
 }
 
+async function test_LOAD() {
+    const kanji = "./vocab/kanji.csv";
+    const hiragana = "./vocab/hiragana.csv";
+    console.log("LOAD TEST :\n");
+    function afficherTableauObjets(tableau) {
+        if (tableau && tableau.length > 0) {
+            tableau.forEach((obj, index) => {
+                console.log(`Objet ${index + 1}:`);
+                console.log(obj);
+            });
+        } else {
+            console.log("Tableau vide ou invalide");
+        }
+    }
+    try {
+        let test1 = await LOAD(kanji);
+        let test2 = await LOAD(hiragana);
+        console.log("Test1 (Kanji) :");
+        afficherTableauObjets(test1);
+        console.log("Test2 (Hiragana) :");
+        afficherTableauObjets(test2);
+    } catch (error) {
+        console.error("Test failed:\n", error);
+    }
+}
+
 // TESTS CALLS :
 window.onload = async function() {
     await VERSION();
     test_TO_MAP();
+    await test_LOAD();
 }
 
 /*
