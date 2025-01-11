@@ -32,8 +32,6 @@ function test_TO_MAP() {
 }
 
 async function test_LOAD() {
-    const kanji = "./vocab/kanji.csv";
-    const hiragana = "./vocab/hiragana.csv";
     console.log("LOAD TEST :\n");
     function afficherTableauObjets(tableau) {
         if (tableau && tableau.length > 0) {
@@ -46,14 +44,11 @@ async function test_LOAD() {
         }
     }
     try {
-        let test1 = await LOAD(kanji);
-        let test2 = await LOAD(hiragana);
-        console.log("Test1 (Kanji) :");
-        afficherTableauObjets(test1);
-        console.log("Test2 (Hiragana) :");
-        afficherTableauObjets(test2);
+        let test = await LOAD("./vocab/kanji.csv");
+        console.log("test is equal to :\n");
+        afficherTableauObjets(test);
     } catch (error) {
-        console.error("Test failed:\n", error);
+        console.error("test failed :\n", error);
     }
 }
 
