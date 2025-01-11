@@ -1,14 +1,8 @@
+// IMPORTS :
 import { VERSION } from "./scripts/version.js";
+import { TO_MAP } from "./scripts/load.js";
 
-window.onload = async function() {
-    await VERSION();
-}
-
-/*
-import { TO_MAP } from "scripts/load.js";
-import { LOAD } from "scripts/load.js";
-
-// TO MAP :
+// TESTS : 
 function test_TO_MAP() {
     const data = [
         { romaji: "ai", kana: "あい" },
@@ -34,6 +28,19 @@ function test_TO_MAP() {
         console.error("Test failed:\n", error);
     }
 }
+
+// TESTS CALLS :
+window.onload = async function() {
+    await VERSION();
+    test_TO_MAP();
+}
+
+/*
+import { TO_MAP } from "scripts/load.js";
+import { LOAD } from "scripts/load.js";
+
+// TO MAP :
+
 
 // LOAD : 
 async function test_LOAD() {
