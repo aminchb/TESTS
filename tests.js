@@ -1,4 +1,4 @@
-import { VERSION } from "/scripts/version.js";
+import { VERSION } from "./scripts/version.js";
 
 window.onload = async function() {
     await VERSION();
