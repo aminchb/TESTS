@@ -1,1 +1,1 @@
-https://aminchb.github.io/tests/tests
+https://aminchb.github.io/TESTS/tests/index.html
