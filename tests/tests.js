@@ -1,7 +1,7 @@
 // IMPORTS :
-import { VERSION } from "./scripts/version.js";
-import { TO_MAP } from "./scripts/load.js";
-import { LOAD } from "./scripts/load.js";
+import { VERSION } from "../scripts/version.js";
+import { TO_MAP } from "../scripts/load.js";
+import { LOAD } from "../scripts/load.js";
 
 
 // TESTS : 
