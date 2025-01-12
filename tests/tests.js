@@ -44,7 +44,7 @@ async function test_LOAD() {
         }
     }
     try {
-        let test = await LOAD("./vocab/kanji.csv");
+        let test = await LOAD("../vocab/kanji.csv");
         console.log("test is equal to :\n");
         afficherTableauObjets(test);
     } catch (error) {
